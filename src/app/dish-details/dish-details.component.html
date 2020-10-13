@@ -1,0 +1,11 @@
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">{{productDetails?.name | uppercase}}</h5>
+      <p class="card-text"><tr>{{productDetails?.desc}}</tr>
+      </p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Tipologia: {{productDetails?.type | uppercase}}</li>
+      <li class="list-group-item">Prezzo: {{productDetails?.price | currency: '€'}}</li>
+    </ul>
+</div>

@@ -1,0 +1,34 @@
+
+.delete:hover{
+  cursor: pointer;
+  color: red !important;
+  text-decoration: none !important;
+}
+
+.info:hover{
+  cursor: pointer;
+  color: greenyellow !important;
+  text-decoration: none !important;
+}
+
+.delete{
+  color: white !important;
+}
+
+.update{
+  color: white !important;
+}
+
+.info{
+  color: white !important;
+}
+
+.update:hover{
+  cursor: pointer;
+  color: orange !important;
+  text-decoration: none !important;
+}
+
+table {
+  text-align: center;
+}

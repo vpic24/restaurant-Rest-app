@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ristorante';
+  tag=[
+    {title: 'Lista Prodotti' , url: ""},
+    {title: '+ Aggiungi Prodotto' , url: ""}
+  ];
 }
