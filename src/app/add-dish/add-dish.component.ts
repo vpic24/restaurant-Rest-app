@@ -15,12 +15,12 @@ export class AddDishComponent implements OnInit {
 
   @Input() productDetails: Product;
   products: Product;
-
+//TODO EVIDENZIARE IN ROSSO LA CASELLA INPUT CON CAMPO INSERITO ERRATO ( NGCLASS)
   productForm = new FormGroup({
     name: new FormControl('', [Validators.required, Validators.maxLength(30)]),
     desc: new FormControl('', Validators.required),
     type: new FormControl('', Validators.required),
-    price: new FormControl('', Validators.required)
+    price: new FormControl('', [Validators.required, Validators.pattern('[0-9]+')]),
   });
 
   onSubmit = function () {
@@ -52,46 +52,31 @@ export class AddDishComponent implements OnInit {
     );
   }
 
-  /*update = function(productAdd){
-    this.productForm.patchValue({
-      name: productAdd.name
-    });
-  }*/
-  
+
   update = function (product: Product) {
-    
-    //console.log(product);
-    
-    //TODO--- fatto ---- devo riuscire a passare productForm dal componente figlio (add-dish) al componente padre(home)
+
     this.productForm.setValue({
       name: product.name,
       desc: product.desc,
       type: product.type,
       price: product.price
     });
-    
-    console.log(this.productForm.value);       
-    
   }
-    updateDone = function(product: Product){
-    //TODO put del prodotto
-   this.productService
-      .update(this.productForm.value, product.id).subscribe();
-      alert(`PRODOTTO ID: ${product.id} aggiornato`);
+
+  updateDone = function (product: Product) {
+    if (confirm(`YOU'LL UPDATE PRODUCT ID: ${product.id} 
+               ARE YOU SURE?`)) {
+      this.productService
+        .update(this.productForm.value, product.id).subscribe();
+      alert(`DISH ID: ${product.id} UPDATED`);
+      window.location.reload();
     }
-
-
-
-        
-    
-
-  
-  
+    this.resetForm();
+  }
 
   resetForm() {
     this.productForm.reset();
   }
-
 
   ngOnInit(): void {
   }

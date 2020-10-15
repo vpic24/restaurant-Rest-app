@@ -6,14 +6,15 @@
   </div>
   <!-- <app-spinner *ngIf="x!=true"></app-spinner>-->
    <div class=" container responsive "> <!--*ngIf="x===true">-->
-     <table class="table table-hover table-dark table-striped table-bordered " *ngIf="flagGetProduct===false">
+     <table class="table table-hover table-dark table-striped table-bordered " 
+     *ngIf="flagGetProduct===false && flagAddProduct === false">
        <thead>
          <tr>
            <th scope="col">ID</th>
-           <th scope="col">Nome Pietanza</th>
-           <th scope="col">Tipologia Pietanza</th>
-           <th scope="col">Descrizione</th>
-           <th scope="col">Prezzo</th>
+           <th scope="col">Name Dish</th>
+           <th scope="col">Type Dish</th>
+           <th scope="col">Description</th>
+           <th scope="col">Price</th>
            <th scope="col"><svg style="color: red; font-size: 2rem;" class="bi bi-x-circle" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
              xmlns="http://www.w3.org/2000/svg">
              <path fill-rule="evenodd" d="M8 15A7 7 0 108 1a7 7 0 000 14zm0 1A8 8 0 108 0a8 8 0 000 16z" clip-rule="evenodd" />
@@ -46,21 +47,22 @@
            <td> {{product.desc}} </td>
            <td> {{product.price | currency: '€'}} </td>
            <td (click)="deleteProduct(product.id)"><a class="delete">DELETE </a></td>
-           <td (click) = "updateProduct(product.id)"><a class="update">UPDATE </a></td>
+           <td (click) = "updateProduct(product.id); flagAddProduct = true"><a class="update">UPDATE </a></td>
            <td (click)="getProduct(product.id)"><a class="info">INFO </a></td>
            
          </tr> 
   
        </tbody>
      </table>
-     <tr><app-add-dish [productDetails]="productDetails"></app-add-dish></tr>
+     <tr><app-add-dish [productDetails]="productDetails" *ngIf="flagAddProduct === true"></app-add-dish></tr>
      <tr><app-dish-details [productDetails]="productDetails" *ngIf="flagGetProduct===true"></app-dish-details></tr>
      
    </div>
    
-  <!-- <div class="container">
-     <a class="add" routerLink="product" routerLinkActive="router-link-active">
-       <button type="button" class="btn btn-success">+ Aggiungi Prodotto</button>
+ <div class="container">
+     <a class="add">
+       <button type="button" class="btn btn-success" *ngIf="flagAddProduct === false" 
+        (click) = "flagAddProduct = true">+ Aggiungi Prodotto</button>
      </a>
-   </div> -->
+   </div>
    

@@ -1,19 +1,5 @@
-<div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">Prodotto: ID - {{productDetails?.id}}</h5>
-  </div>
-  <ul class="list-group list-group-flush">
-    <input type="text" [(ngModel)]="productDetails.name">
-    <select class="custom-select" [(ngModel)]="productDetails.type" id="validationDefault04">
-      <option selected>{{productDetails.type}}</option>
-      <option>Antipasto</option>
-      <option>Primo</option>
-      <option>Secondo</option>
-      <option>Dolce</option>
-    </select>
-
-    <textarea type="text" [(ngModel)]="productDetails.desc"></textarea>
-    <input type="text" [(ngModel)]="productDetails.price">
-  </ul>
-
-</div> <button class="btn btn-success" (click)="updateProduct(productDetails)">aggiorna</button>
+<p>{{productDetails.id}}</p>
+<p>{{productDetails.name}}</p>
+<p>{{productDetails.desc}}</p>
+<p>{{productDetails.type}}</p>
+<p>{{productDetails.price}}</p>

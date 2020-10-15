@@ -2,9 +2,6 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { ProductService } from "src/app/service/product.service";
 import { Product } from "src/app/models/product";
 import { AddDishComponent } from 'src/app/add-dish/add-dish.component';
-import { ChildActivationEnd } from '@angular/router';
-
-
 
 
 @Component({
@@ -15,6 +12,7 @@ import { ChildActivationEnd } from '@angular/router';
 export class HomeComponent implements OnInit {
 
   @ViewChild(AddDishComponent) child: AddDishComponent;
+
   constructor(private productService: ProductService) { }
 
   products: Product;
@@ -24,7 +22,7 @@ export class HomeComponent implements OnInit {
   //showForm: boolean = false;
   flagGetProduct: boolean = false;
   flagAddProduct: boolean = false;
-  
+
 
   deleteProduct = function (id: number) {
     if (confirm(`YOU'LL DELETE PRODUCT ID: ${id} 
@@ -36,7 +34,7 @@ export class HomeComponent implements OnInit {
   };
 
   getProduct = function (id: number) {
-   // this.btnAdd = false;
+    // this.btnAdd = false;
     this.productService
       .getById(id).subscribe((dataDetails: Product) => {
         this.productDetails = dataDetails;
@@ -45,20 +43,15 @@ export class HomeComponent implements OnInit {
 
   }
 
-  updateProduct = function (id: number){
-    
+  updateProduct = function (id: number) {
+
     this.productService
       .getById(id).subscribe((dataDetails: Product) => {
         this.productDetails = dataDetails;
         this.child.update(dataDetails);
-
       });
   }
-/*update = function(product: Product){
-  this.productForm.patchValue({
-    name: 'pippo'
-  });
-}*/
+
 
   fetchData = function () {
     //this.btnAdd = true;

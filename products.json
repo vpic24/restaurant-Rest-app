@@ -1,16 +1,16 @@
 {
   "products": [
     {
-      "id": 20,
       "name": "cotoletta",
-      "type": "secondo",
       "desc": "Da Nord a Sud è un piatto che soddisfa tutti, ma viene ordinata specialmente a Milano e dintorni",
-      "price": "12"
+      "type": "Secondo",
+      "price": "16",
+      "id": 20
     },
     {
       "name": "sfogliatella",
-      "type": "dolce",
       "desc": "dolce tipico della tradizione napoletana",
+      "type": "Dolce",
       "price": "2",
       "id": 5
     },
@@ -31,16 +31,23 @@
     {
       "name": "pippo",
       "desc": "aaaaaaa",
-      "type": "",
+      "type": "Primo",
       "price": 3,
       "id": 23
     },
     {
       "name": "provarifatta",
       "desc": "provafattarifatta",
-      "type": "Antipasto",
-      "price": "300000",
+      "type": "Primo",
+      "price": "91",
       "id": 25
+    },
+    {
+      "name": "pluto",
+      "desc": "bbbbb",
+      "type": "Primo",
+      "price": "44",
+      "id": 26
     }
   ]
 }
