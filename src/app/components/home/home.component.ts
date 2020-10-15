@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ProductService } from "src/app/service/product.service";
 import { Product } from "src/app/models/product";
+import { AddDishComponent } from 'src/app/add-dish/add-dish.component';
+import { ChildActivationEnd } from '@angular/router';
 
 
 
@@ -12,13 +14,17 @@ import { Product } from "src/app/models/product";
 })
 export class HomeComponent implements OnInit {
 
+  @ViewChild(AddDishComponent) child: AddDishComponent;
   constructor(private productService: ProductService) { }
 
   products: Product;
   productDetails: Product;
-  productUpdate: Product;
+  productAdd: Product;
+  //btnAdd: boolean = false;
+  //showForm: boolean = false;
   flagGetProduct: boolean = false;
   flagAddProduct: boolean = false;
+  
 
   deleteProduct = function (id: number) {
     if (confirm(`YOU'LL DELETE PRODUCT ID: ${id} 
@@ -30,6 +36,7 @@ export class HomeComponent implements OnInit {
   };
 
   getProduct = function (id: number) {
+   // this.btnAdd = false;
     this.productService
       .getById(id).subscribe((dataDetails: Product) => {
         this.productDetails = dataDetails;
@@ -38,15 +45,23 @@ export class HomeComponent implements OnInit {
 
   }
 
-  updateProduct = function (id: number, product: Product) {
+  updateProduct = function (id: number){
+    
     this.productService
-      .put(id, product).subscribe((dataUpdate: Product) => {
-        this.productUpdate = dataUpdate;
-        console.log(this.productUpdate);
+      .getById(id).subscribe((dataDetails: Product) => {
+        this.productDetails = dataDetails;
+        this.child.update(dataDetails);
+
       });
   }
+/*update = function(product: Product){
+  this.productForm.patchValue({
+    name: 'pippo'
+  });
+}*/
 
   fetchData = function () {
+    //this.btnAdd = true;
     this.productService
       .get().subscribe((data: Product) => {
         this.products = data;

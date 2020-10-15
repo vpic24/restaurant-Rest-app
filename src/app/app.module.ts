@@ -8,7 +8,6 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { DishDetailsComponent } from './dish-details/dish-details.component';
 import { AddDishComponent } from './add-dish/add-dish.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { UpdateDishComponent } from './update-dish/update-dish.component';
 
 @NgModule({
   declarations: [
@@ -16,8 +15,7 @@ import { UpdateDishComponent } from './update-dish/update-dish.component';
     HomeComponent,
     NavbarComponent,
     DishDetailsComponent,
-    AddDishComponent,
-    UpdateDishComponent
+    AddDishComponent
   ],
   imports: [
     BrowserModule,

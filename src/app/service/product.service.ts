@@ -27,7 +27,7 @@ export class ProductService {
     return this.httpClient.post(`${this.BaseUrl}`, product);  //ritorna un OBSERVABLE
   }
 
-  public put(product: Product, id: number){
+  public update(product: Product, id: number){
     return this.httpClient.put(`${this.BaseUrl}/${id}`, product);
   }
 }

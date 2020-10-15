@@ -1,46 +1,44 @@
 <form [formGroup]="productForm" class="container">
-    <div class="form-row">
-      <div class="col-md-5 mb-3">
-        <label for="validationDefault01">*Name dish</label>
-        <input type="text" formControlName="name" class="form-control" placeholder="Name">
-      </div>
-  
-      <div class="col-md-6 mb-9">
-        <label for="validationDefault02">*Description dish</label>
-        <textarea type="text" formControlName="desc" class="form-control" placeholder="Description" rows="4"></textarea>
-      </div>
-  
-   
-  
-      <div class="col-md-2 mb-3">
-        <label for="validationDefault04">*Dish Type</label>
-        <select class="custom-select" formControlName="type" id="validationDefault04">
-          <option selected disabled value="">Not defined</option>
-          <option>Antipasto</option>
-          <option>Primo</option>
-          <option>Secodndo</option>
-          <option>Dolce</option>  
-        </select>
-      </div>
-  
-      <div class="col-md-2 mb-2">
-        <label for="validationDefault05">*Price</label>
-        <input formControlName="price" class="form-control" id="price" placeholder="€">
-      </div>
-      
+  <div class="form-row">
+    <div class="col-md-5 mb-3">
+      <label for="validationDefault01">*Name dish</label>
+      <input type="text" formControlName="name" class="form-control" placeholder="Name">
     </div>
-  
-    
-      <button class="btn btn-primary" type="submit" (click)="onSubmit()" [disabled]="!productForm.valid">Submit
-      </button>
-    
-  
-    <td>
-  
-      <button class="btn btn-warning" type="submit" (click)="resetForm()">
-        Reset
-      </button>
-    </td>
-  </form>
-  
- 
+
+    <div class="col-md-6 mb-9">
+      <label for="validationDefault02">*Description dish</label>
+      <textarea type="text" formControlName="desc" class="form-control" placeholder="Description" rows="4"></textarea>
+    </div>
+
+
+
+    <div class="col-md-2 mb-3">
+      <label for="validationDefault04">*Dish Type</label>
+      <select class="custom-select" formControlName="type" id="validationDefault04">
+        <option selected disabled value="">Not defined</option>
+        <option>Antipasto</option>
+        <option>Primo</option>
+        <option>Secondo</option>
+        <option>Dolce</option>
+      </select>
+    </div>
+
+    <div class="col-md-2 mb-2">
+      <label for="validationDefault05">*Price</label>
+      <input formControlName="price" class="form-control" id="price" placeholder="€">
+    </div>
+
+  </div>
+
+
+  <button class="btn btn-primary" type="submit" (click)="onSubmit()" [disabled]="!productForm.valid">Submit
+  </button>
+
+
+  <td>
+
+    <button class="btn btn-warning" type="submit" (click)="updateDone(productDetails)">
+      Reset
+    </button>
+  </td>
+</form>

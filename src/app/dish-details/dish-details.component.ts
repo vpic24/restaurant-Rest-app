@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Product } from "src/app/models/product";
+import { ProductService } from "src/app/service/product.service";
 
 @Component({
   selector: 'app-dish-details',
@@ -8,9 +9,17 @@ import { Product } from "src/app/models/product";
 })
 export class DishDetailsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private productService: ProductService) { }
 
   @Input() productDetails: Product;
+
+  updateProduct = function (product: Product) {
+    this.productService
+      .update(product.id).subscribe((dataUpdate: Product) => {
+        this.productDetails = dataUpdate;
+        console.log(this.productDetails);
+      });
+  }
 
   ngOnInit(): void {
   }
