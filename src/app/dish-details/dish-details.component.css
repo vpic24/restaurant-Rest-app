@@ -1,0 +1,29 @@
+#card {
+    width: 350px;
+    height: 290px;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    margin: -100px 0 0 -175px;
+    text-align: center;
+    vertical-align: middle;
+ }
+
+ #desc {
+     border-bottom: 1px solid rgba(0,0,0,.125);
+     background-color: white;
+ }
+
+ #type {
+    border-bottom: 1px solid rgba(0,0,0,.125);
+    background-color: navajowhite;
+}
+
+ #name {
+    background-color: white;
+ }
+
+ .card-header {
+    background-color: navajowhite;
+ }
+ 

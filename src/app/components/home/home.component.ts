@@ -18,8 +18,6 @@ export class HomeComponent implements OnInit {
   products: Product;
   productDetails: Product;
   productAdd: Product;
-  //btnAdd: boolean = false;
-  //showForm: boolean = false;
   flagGetProduct: boolean = false;
   flagAddProduct: boolean = false;
 
@@ -51,7 +49,6 @@ export class HomeComponent implements OnInit {
         this.child.update(dataDetails);
       });
   }
-
 
   fetchData = function () {
     //this.btnAdd = true;
