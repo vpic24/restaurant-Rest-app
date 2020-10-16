@@ -1,19 +1,19 @@
 <form [formGroup]="productForm">
   <div class="form-row">
     <div class="col-md-5 mb-3">
-      <label for="validationDefault01">*Name dish</label>
+      <label for="validationDefault01">*Nome Piatto</label>
       <input type="text" formControlName="name" class="form-control" placeholder="Name">
     </div>
 
     <div class="col-md-6 mb-9">
-      <label for="validationDefault02">*Description dish</label>
+      <label for="validationDefault02">*Descrizione Piatto</label>
       <textarea type="text" formControlName="desc" class="form-control" placeholder="Description" rows="4"></textarea>
     </div>
 
 
 
     <div class="col-md-3 mb-3">
-      <label for="validationDefault04">*Dish Type</label>
+      <label for="validationDefault04">*Tipologia Del Piatto</label>
       <select class="custom-select" formControlName="type" id="validationDefault04">
         <option selected disabled value="">Not defined</option>
         <option>Antipasto</option>
@@ -24,13 +24,12 @@
     </div>
 
     <div class="col-md-2 mb-2">
-      <label for="validationDefault05">*Price</label>
-      <input formControlName="price" class="form-control" id="price" placeholder="€">
+      <label for="validationDefault05">*Prezzo</label>
+      <input formControlName="price" class="form-control" id="price" placeholder="1.00€">
     </div>
 
   </div>
 
-  <!--TODO GESTIRE LA PRESENZA DEI BOTTONI SUBMIT E UPDATE-->
   <a>
     <button class="btn btn-primary" type="submit" *ngIf="flagBtn === false" (click)="onSubmit()"
       [disabled]="!productForm.valid">Submit

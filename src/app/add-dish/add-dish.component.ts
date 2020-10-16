@@ -21,7 +21,7 @@ export class AddDishComponent implements OnInit {
     name: new FormControl('', [Validators.required, Validators.maxLength(30)]),
     desc: new FormControl('', Validators.required),
     type: new FormControl('', Validators.required),
-    price: new FormControl('', [Validators.required, Validators.pattern('[0-9]+')]),
+    price: new FormControl('', [Validators.required, Validators.pattern('[0.0-9.9]+')]),
   });
 
   onSubmit = function () {

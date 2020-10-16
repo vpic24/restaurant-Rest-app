@@ -20,6 +20,7 @@ export class HomeComponent implements OnInit {
   productAdd: Product;
   flagGetProduct: boolean = false;
   flagAddProduct: boolean = false;
+  flagUpdateProduct: boolean = false;
 
 
   deleteProduct = function (id: number) {

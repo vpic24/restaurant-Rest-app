@@ -1,13 +1,16 @@
-<div class="alert alert-info container" role="alert" *ngIf="flagGetProduct===false">
+<!--<div id= "lista" class="alert alert-info container" role="alert" *ngIf="flagGetProduct===false">
   <h2 style="text-align: center;">Lista Prodotti</h2>
-</div>
+</div>-->
 <div class="alert alert-success container" role="alert" *ngIf="flagGetProduct===true">
   <h2 style="text-align: center;">Descrizione del prodotto</h2>
+</div>
+<div class="alert alert-warning container" role="alert" *ngIf="flagUpdateProduct===true">
+  <h2 style="text-align: center;">Aggiornamento del prodotto</h2>
 </div>
 <!-- <app-spinner *ngIf="x!=true"></app-spinner>-->
 <div class=" container responsive ">
   <!--*ngIf="x===true">-->
-  <table class="table table-hover table-dark table-striped table-bordered "
+  <table id="list" class="table table-hover table-dark table-striped table-bordered "
     *ngIf="flagGetProduct===false && flagAddProduct === false">
     <thead>
       <tr>
@@ -50,9 +53,9 @@
         <td> {{product.name | uppercase}} </td>
         <td> {{product.type}} </td>
         <td> {{product.desc}} </td>
-        <td> {{product.price | currency: '€'}} </td>
+        <td> {{product.price | currency: 'EUR'}} </td>
         <td (click)="deleteProduct(product.id)"><a class="delete">DELETE </a></td>
-        <td (click)="updateProduct(product.id); flagAddProduct = true"><a class="update">UPDATE </a></td>
+        <td (click)="updateProduct(product.id); flagAddProduct = true; flagUpdateProduct = true;"><a class="update">UPDATE </a></td>
         <td (click)="getProduct(product.id)"><a class="info">INFO </a></td>
 
       </tr>
@@ -70,7 +73,7 @@
 
 <div class="container">
   <a class="add">
-    <button type="button" id="add" class="btn btn-success" *ngIf="flagAddProduct === false" (click)="flagAddProduct = true">
+    <button type="button" class="btn btn-success" *ngIf="flagAddProduct === false" (click)="flagAddProduct = true">
       + Aggiungi Prodotto</button>
   </a>
 </div>
