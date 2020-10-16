@@ -1,0 +1,14 @@
+input.ng-invalid, textarea.ng-invalid, select.ng-invalid  {
+    border: 3px solid red;
+    border-color:red;
+}
+
+input.ng-valid,textarea.ng-valid, select.ng-valid  {
+    border: 3px solid green;
+    border-color: green;
+}
+
+input.ng-pristine,textarea.ng-pristine, select.ng-pristine  {
+    border: 2px solid grey;
+    border-color: grey;
+}

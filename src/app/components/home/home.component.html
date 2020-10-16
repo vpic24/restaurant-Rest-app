@@ -1,68 +1,76 @@
 <div class="alert alert-info container" role="alert" *ngIf="flagGetProduct===false">
-    <h2 style="text-align: center;">Lista Prodotti</h2>
-   </div>
-   <div class="alert alert-success container" role="alert" *ngIf="flagGetProduct===true">
-    <h2 style="text-align: center;">Descrizione del prodotto</h2>
-  </div>
-  <!-- <app-spinner *ngIf="x!=true"></app-spinner>-->
-   <div class=" container responsive "> <!--*ngIf="x===true">-->
-     <table class="table table-hover table-dark table-striped table-bordered " 
-     *ngIf="flagGetProduct===false && flagAddProduct === false">
-       <thead>
-         <tr>
-           <th scope="col">ID</th>
-           <th scope="col">Name Dish</th>
-           <th scope="col">Type Dish</th>
-           <th scope="col">Description</th>
-           <th scope="col">Price</th>
-           <th scope="col"><svg style="color: red; font-size: 2rem;" class="bi bi-x-circle" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
-             xmlns="http://www.w3.org/2000/svg">
-             <path fill-rule="evenodd" d="M8 15A7 7 0 108 1a7 7 0 000 14zm0 1A8 8 0 108 0a8 8 0 000 16z" clip-rule="evenodd" />
-             <path fill-rule="evenodd" d="M11.854 4.146a.5.5 0 010 .708l-7 7a.5.5 0 01-.708-.708l7-7a.5.5 0 01.708 0z"
-               clip-rule="evenodd" />
-             <path fill-rule="evenodd" d="M4.146 4.146a.5.5 0 000 .708l7 7a.5.5 0 00.708-.708l-7-7a.5.5 0 00-.708 0z"
-               clip-rule="evenodd" />
-           </svg></th>
-           <th scope="col"><svg style="color: orange; font-size: 2rem;" class="bi bi-file-earmark-arrow-down" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
-             xmlns="http://www.w3.org/2000/svg">
-             <path d="M4 1h5v1H4a1 1 0 00-1 1v10a1 1 0 001 1h8a1 1 0 001-1V6h1v7a2 2 0 01-2 2H4a2 2 0 01-2-2V3a2 2 0 012-2z" />
-             <path d="M9 4.5V1l5 5h-3.5A1.5 1.5 0 019 4.5z" />
-             <path fill-rule="evenodd"
-               d="M5.646 9.146a.5.5 0 01.708 0L8 10.793l1.646-1.647a.5.5 0 01.708.708l-2 2a.5.5 0 01-.708 0l-2-2a.5.5 0 010-.708z"
-               clip-rule="evenodd" />
-             <path fill-rule="evenodd" d="M8 6a.5.5 0 01.5.5v4a.5.5 0 01-1 0v-4A.5.5 0 018 6z" clip-rule="evenodd" />
-           </svg></th>
-           <th scope="col"><svg style="color: greenyellow; font-size:2rem;" width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-info-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-            <path d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588z"/>
-            <circle cx="8" cy="4.5" r="1"/>
+  <h2 style="text-align: center;">Lista Prodotti</h2>
+</div>
+<div class="alert alert-success container" role="alert" *ngIf="flagGetProduct===true">
+  <h2 style="text-align: center;">Descrizione del prodotto</h2>
+</div>
+<!-- <app-spinner *ngIf="x!=true"></app-spinner>-->
+<div class=" container responsive ">
+  <!--*ngIf="x===true">-->
+  <table class="table table-hover table-dark table-striped table-bordered "
+    *ngIf="flagGetProduct===false && flagAddProduct === false">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name Dish</th>
+        <th scope="col">Type Dish</th>
+        <th scope="col">Description</th>
+        <th scope="col">Price</th>
+        <th scope="col"><svg style="color: red; font-size: 2rem;" class="bi bi-x-circle" width="1em" height="1em"
+            viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M8 15A7 7 0 108 1a7 7 0 000 14zm0 1A8 8 0 108 0a8 8 0 000 16z"
+              clip-rule="evenodd" />
+            <path fill-rule="evenodd" d="M11.854 4.146a.5.5 0 010 .708l-7 7a.5.5 0 01-.708-.708l7-7a.5.5 0 01.708 0z"
+              clip-rule="evenodd" />
+            <path fill-rule="evenodd" d="M4.146 4.146a.5.5 0 000 .708l7 7a.5.5 0 00.708-.708l-7-7a.5.5 0 00-.708 0z"
+              clip-rule="evenodd" />
           </svg></th>
-         </tr>
-       </thead>
-       <tbody>
-         <tr class="list" *ngFor="let product of products">
-           <td> {{product.id}} </td>
-           <td> {{product.name | uppercase}} </td>
-           <td> {{product.type}} </td>
-           <td> {{product.desc}} </td>
-           <td> {{product.price | currency: '€'}} </td>
-           <td (click)="deleteProduct(product.id)"><a class="delete">DELETE </a></td>
-           <td (click) = "updateProduct(product.id); flagAddProduct = true"><a class="update">UPDATE </a></td>
-           <td (click)="getProduct(product.id)"><a class="info">INFO </a></td>
-           
-         </tr> 
-  
-       </tbody>
-     </table>
-     <tr><app-add-dish [productDetails]="productDetails" *ngIf="flagAddProduct === true"></app-add-dish></tr>
-     <tr><app-dish-details [productDetails]="productDetails" *ngIf="flagGetProduct===true"></app-dish-details></tr>
-     
-   </div>
-   
- <div class="container">
-     <a class="add">
-       <button type="button" class="btn btn-success" *ngIf="flagAddProduct === false" 
-        (click) = "flagAddProduct = true">+ Aggiungi Prodotto</button>
-     </a>
-   </div>
-   
+        <th scope="col"><svg style="color: orange; font-size: 2rem;" class="bi bi-file-earmark-arrow-down" width="1em"
+            height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M4 1h5v1H4a1 1 0 00-1 1v10a1 1 0 001 1h8a1 1 0 001-1V6h1v7a2 2 0 01-2 2H4a2 2 0 01-2-2V3a2 2 0 012-2z" />
+            <path d="M9 4.5V1l5 5h-3.5A1.5 1.5 0 019 4.5z" />
+            <path fill-rule="evenodd"
+              d="M5.646 9.146a.5.5 0 01.708 0L8 10.793l1.646-1.647a.5.5 0 01.708.708l-2 2a.5.5 0 01-.708 0l-2-2a.5.5 0 010-.708z"
+              clip-rule="evenodd" />
+            <path fill-rule="evenodd" d="M8 6a.5.5 0 01.5.5v4a.5.5 0 01-1 0v-4A.5.5 0 018 6z" clip-rule="evenodd" />
+          </svg></th>
+        <th scope="col"><svg style="color: greenyellow; font-size:2rem;" width="1em" height="1em" viewBox="0 0 16 16"
+            class="bi bi-info-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+            <path
+              d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588z" />
+            <circle cx="8" cy="4.5" r="1" />
+          </svg></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="list" *ngFor="let product of products">
+        <td> {{product.id}} </td>
+        <td> {{product.name | uppercase}} </td>
+        <td> {{product.type}} </td>
+        <td> {{product.desc}} </td>
+        <td> {{product.price | currency: '€'}} </td>
+        <td (click)="deleteProduct(product.id)"><a class="delete">DELETE </a></td>
+        <td (click)="updateProduct(product.id); flagAddProduct = true"><a class="update">UPDATE </a></td>
+        <td (click)="getProduct(product.id)"><a class="info">INFO </a></td>
+
+      </tr>
+
+    </tbody>
+  </table>
+  <tr>
+    <app-add-dish [productDetails]="productDetails" *ngIf="flagAddProduct === true"></app-add-dish>
+  </tr>
+  <tr>
+    <app-dish-details [productDetails]="productDetails" *ngIf="flagGetProduct === true"></app-dish-details>
+  </tr>
+
+</div>
+
+<div class="container">
+  <a class="add">
+    <button type="button" class="btn btn-success" *ngIf="flagAddProduct === false" (click)="flagAddProduct = true">
+      + Aggiungi Prodotto</button>
+  </a>
+</div>

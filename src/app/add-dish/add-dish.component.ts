@@ -15,7 +15,8 @@ export class AddDishComponent implements OnInit {
 
   @Input() productDetails: Product;
   products: Product;
-//TODO EVIDENZIARE IN ROSSO LA CASELLA INPUT CON CAMPO INSERITO ERRATO ( NGCLASS)
+  flagBtn: boolean = false;
+  
   productForm = new FormGroup({
     name: new FormControl('', [Validators.required, Validators.maxLength(30)]),
     desc: new FormControl('', Validators.required),
@@ -54,6 +55,7 @@ export class AddDishComponent implements OnInit {
 
 
   update = function (product: Product) {
+    this.flagBtn = true;
 
     this.productForm.setValue({
       name: product.name,
@@ -69,9 +71,8 @@ export class AddDishComponent implements OnInit {
       this.productService
         .update(this.productForm.value, product.id).subscribe();
       alert(`DISH ID: ${product.id} UPDATED`);
-      window.location.reload();
-    }
-    this.resetForm();
+      }
+    window.location.reload();
   }
 
   resetForm() {

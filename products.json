@@ -18,36 +18,29 @@
       "name": "Tiramisù",
       "desc": "dolce napoletano\n",
       "type": "Dolce",
-      "price": "5",
+      "price": "4",
       "id": 21
     },
     {
-      "name": "qqqq",
-      "desc": "qqqqq",
-      "type": "Antipasto",
-      "price": "111",
-      "id": 22
-    },
-    {
-      "name": "pippo",
-      "desc": "aaaaaaa",
-      "type": "Primo",
-      "price": 3,
-      "id": 23
-    },
-    {
-      "name": "provarifatta",
-      "desc": "provafattarifatta",
-      "type": "Primo",
-      "price": "91",
-      "id": 25
-    },
-    {
-      "name": "pluto",
-      "desc": "bbbbb",
-      "type": "Primo",
-      "price": "44",
+      "name": "Torta ricotta e pera",
+      "desc": "torta buona",
+      "type": "Dolce",
+      "price": "5",
       "id": 26
+    },
+    {
+      "name": "pizza",
+      "desc": "Margherita",
+      "type": "Primo",
+      "price": "4",
+      "id": 27
+    },
+    {
+      "name": "pasta genovese",
+      "desc": "Piatto tipico della cucina napoletana",
+      "type": "Primo",
+      "price": "5",
+      "id": 28
     }
   ]
 }
