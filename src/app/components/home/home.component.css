@@ -30,10 +30,17 @@
 }
 
 table {
+  margin-top: 55px;
   text-align: center;
 }
 
 .table td, .table th {
   padding: .75rem;
   vertical-align: inherit;
+}
+
+#btnAdd {
+    margin-top: 55px;
+    position: fixed;
+  
 }

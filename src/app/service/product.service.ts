@@ -11,23 +11,23 @@ export class ProductService {
   // dependency Injection
   constructor(private httpClient: HttpClient) { }
 
-  public get(){
+  public get() {
     return this.httpClient.get(`${this.BaseUrl}`);
   }
 
-  public getById(id: number){
+  public getById(id: number) {
     return this.httpClient.get(`${this.BaseUrl}/${id}`);
   }
 
-  public delete(id: number){
+  public delete(id: number) {
     return this.httpClient.delete(`${this.BaseUrl}/${id}`);
   }
 
-  public create(product: Product){
-    return this.httpClient.post(`${this.BaseUrl}`, product);  //ritorna un OBSERVABLE
+  public create(product: Product) {
+    return this.httpClient.post(`${this.BaseUrl}`, product);
   }
 
-  public update(product: Product, id: number){
+  public update(product: Product, id: number) {
     return this.httpClient.put(`${this.BaseUrl}/${id}`, product);
   }
 }

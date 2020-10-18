@@ -1,0 +1,68 @@
+<div id="lista" *ngIf="flagBtn === false" class="alert alert-info container" role="alert">
+  <h2 style="text-align: center;">Aggiungi Piatto</h2>
+</div>
+
+<div class="alert alert-warning container" *ngIf="flagBtn === true" role="alert">
+  <h2 style="text-align: center;">Modifica Piatto</h2>
+</div>
+
+<div class="container p-5">
+
+  <form [formGroup]="productForm">
+    <div class="form-row">
+      <div class="col-md-5 mb-3">
+        <label for="validationDefault01">*Nome Piatto</label>
+        <input type="text" formControlName="name" class="form-control" placeholder="Nome">
+      </div>
+
+      <div class="col-md-6 mb-9">
+        <label for="validationDefault02">*Descrizione Piatto</label>
+        <textarea type="text" formControlName="desc" class="form-control" placeholder="Descrizione" rows="4"></textarea>
+      </div>
+
+
+
+      <div class="col-md-3 mb-3">
+        <label for="validationDefault04">*Tipologia Del Piatto</label>
+        <select class="custom-select" formControlName="type" id="validationDefault04">
+          <option selected disabled value="">Non definito</option>
+          <option>Antipasto</option>
+          <option>Primo</option>
+          <option>Secondo</option>
+          <option>Dolce</option>
+        </select>
+      </div>
+
+      <div class="col-md-2 mb-2">
+        <label for="validationDefault05">*Prezzo</label>
+        <input formControlName="price" class="form-control" id="price" placeholder="1.00€">
+      </div>
+
+    </div>
+
+    <a>
+      <button id="confirm" class="btn btn-primary" type="submit" *ngIf="flagBtn === false" (click)="onSubmit()"
+        [disabled]="!productForm.valid">Salva
+      </button>
+    </a>
+    <a>
+      <button id="condifrm" class="btn btn-warning" type="submit" *ngIf="flagBtn === true"
+        (click)="updateDone(productDetails)" [disabled]="!productForm.valid">
+        Modifica
+      </button>
+    </a>
+
+    <a>
+      <button id="back" class="btn btn-secondary" type="submit" (click)="backHome()">
+        Indietro
+      </button>
+    </a>
+
+    <a>
+      <button id="back" class="btn btn-danger" type="submit" (click)="resetForm()">
+        Reset
+      </button>
+    </a>
+
+  </form>
+</div>

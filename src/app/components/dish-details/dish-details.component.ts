@@ -13,12 +13,8 @@ export class DishDetailsComponent implements OnInit {
 
   @Input() productDetails: Product;
 
-  updateProduct = function (product: Product) {
-    this.productService
-      .update(product.id).subscribe((dataUpdate: Product) => {
-        this.productDetails = dataUpdate;
-        console.log(this.productDetails);
-      });
+  backHome() {
+    window.location.reload();
   }
 
   ngOnInit(): void {

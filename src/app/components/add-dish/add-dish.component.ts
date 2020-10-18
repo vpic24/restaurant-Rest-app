@@ -1,7 +1,7 @@
-import { Component, Input, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Product } from '../models/product';
-import { ProductService } from '../service/product.service';
+import { Product } from 'src/app/models/product';
+import { ProductService } from 'src/app/service/product.service';
 
 
 @Component({
@@ -16,7 +16,7 @@ export class AddDishComponent implements OnInit {
   @Input() productDetails: Product;
   products: Product;
   flagBtn: boolean = false;
-  
+
   productForm = new FormGroup({
     name: new FormControl('', [Validators.required, Validators.maxLength(30)]),
     desc: new FormControl('', Validators.required),
@@ -34,7 +34,7 @@ export class AddDishComponent implements OnInit {
       this.create({ name, desc, type, price });
     }
     else
-      alert("error");
+      alert("Qualcosa è andato storto!!!");
     window.location.reload();
   }
 
@@ -42,14 +42,14 @@ export class AddDishComponent implements OnInit {
     this.productService.create(product).subscribe(
 
       val => {
-        alert(`product has been created correctly`);
+        alert(`Prodotto inserito correttamente`);
       },
 
       error => {
-        console.error('operation failed');
+        alert('OPS... Si è verificato un errore durante la scrittura');
       },
 
-      () => { console.log('Creation complete'); }
+      () => { console.log('Creazione completata'); }
     );
   }
 
@@ -66,17 +66,34 @@ export class AddDishComponent implements OnInit {
   }
 
   updateDone = function (product: Product) {
-    if (confirm(`YOU'LL UPDATE PRODUCT ID: ${product.id} 
-               ARE YOU SURE?`)) {
+    if (confirm(`STAI PER AGGIORNARE IL PRODOTTO CON ID:${product.id} 
+               SEI SICURO?`)) {
       this.productService
-        .update(this.productForm.value, product.id).subscribe();
-      alert(`DISH ID: ${product.id} UPDATED`);
-      }
-    window.location.reload();
+        .update(this.productForm.value, product.id).subscribe(
+          val => {
+            alert(`PIATTO ID:${product.id} AGGIORNATO`);
+          },
+
+          error => {
+            alert(`OPS... Si è verificato un errore durante l'aggiornamento`);
+            window.location.reload();
+          },
+
+          () => {
+            console.log('aggiornamento completato');
+            window.location.reload();
+          }
+        );
+    }
+
   }
 
   resetForm() {
     this.productForm.reset();
+  }
+
+  backHome() {
+    window.location.reload();
   }
 
   ngOnInit(): void {

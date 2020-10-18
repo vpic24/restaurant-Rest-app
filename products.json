@@ -5,42 +5,56 @@
       "desc": "Da Nord a Sud è un piatto che soddisfa tutti, ma viene ordinata specialmente a Milano e dintorni",
       "type": "Secondo",
       "price": "16",
-      "id": 20
+      "id": 1
     },
     {
       "name": "sfogliatella",
-      "desc": "dolce tipico della tradizione napoletana",
+      "desc": "La sfogliatella a Napoli ha due tifoserie: pasta sfoglia vs pasta frolla. L’unica cosa su cui sono tutti d’accordo è il ripieno di ricotta, semolino, uova e zucchero arricchito di canditi, spezie e acqua di fiori d’arancio.",
       "type": "Dolce",
       "price": "2",
+      "id": 2
+    },
+    {
+      "name": "Pastiera",
+      "desc": "Nella pastiera troviamo un universo di ingredienti: la base è una pasta frolla ripiena di ricotta, acqua di fiori d’arancio, grano bollito, scorze d’arancia e spezie.",
+      "type": "Dolce",
+      "price": "3",
+      "id": 3
+    },
+    {
+      "name": "Gattò di patate",
+      "desc": "Ricetta napoletana con zampino francese: sono sempre quegli chef d’Oltralpe al seguito dei Borboni i responsabili dell’invenzione di questo piatto unico. Il gattò di patate è la versione rinnovata e travisata del gâteau, la torta transalpina.",
+      "type": "Secondo",
+      "price": "4",
+      "id": 4
+    },
+    {
+      "name": "genovese",
+      "desc": "su una base di carote, sedano e cipolle si fa soffriggere la carne, muscolo e spezzatino di manzo. Si aggiunge vino rosso, almeno un chilo e mezzo di cipolle, un bicchierino d’acqua e si fa cuocere a fiamma bassa per almeno cinque o sei ore. Unite alle candele spezzate, un formato di pasta liscio e cilindrico, e favorite.",
+      "type": "Primo",
+      "price": "5.5",
       "id": 5
     },
     {
-      "name": "Tiramisù",
-      "desc": "dolce napoletano\n",
-      "type": "Dolce",
-      "price": "4",
-      "id": 21
-    },
-    {
-      "name": "Torta ricotta e pera",
-      "desc": "torta buona",
-      "type": "Dolce",
-      "price": "5",
-      "id": 26
-    },
-    {
-      "name": "pizza",
-      "desc": "Margherita",
+      "name": "Ragù napoletano",
+      "desc": "su una base di carote, sedano e cipolle si fa soffriggere la carne, muscolo e spezzatino di manzo. Si aggiunge vino rosso, almeno un chilo e mezzo di cipolle, un bicchierino d’acqua e si fa cuocere a fiamma bassa per almeno cinque o sei ore. Unite alle candele spezzate, un formato di pasta liscio e cilindrico, e favorite.",
       "type": "Primo",
-      "price": "4",
-      "id": 27
+      "price": "6",
+      "id": 6
     },
     {
-      "name": "pasta genovese",
-      "desc": "Piatto tipico della cucina napoletana",
+      "name": "Pasta, patate e provola",
+      "desc": " Pasta, patate e provola è una formula magica a tripla P declamata rigorosamente in quest’ordine. Alla base c’è un soffritto di cipolla e pancetta, sul quale vengono versate le patate (quelle gialle e farinose fanno al caso vostro), qualche pomodorino e del basilico per dare un po’ di colore.",
       "type": "Primo",
       "price": "5",
-      "id": 28
+      "id": 7
+    },
+    {
+      "name": "Impepata di cozze",
+      "desc": "Cozze cotte in pentola, condite con olio d’oliva, aglio, prezzemolo e abbondante pepe nero: non vi servono nemmeno le posate. Munitevi di bruschette calde e di un bel calice di Fiano, fresco e sapido.",
+      "type": "Antipasto",
+      "price": "3",
+      "id": 8
     }
   ]
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ProductService } from "src/app/service/product.service";
 import { Product } from "src/app/models/product";
-import { AddDishComponent } from 'src/app/add-dish/add-dish.component';
+import { AddDishComponent } from 'src/app/components/add-dish/add-dish.component';
 
 
 @Component({
@@ -21,19 +21,32 @@ export class HomeComponent implements OnInit {
   flagGetProduct: boolean = false;
   flagAddProduct: boolean = false;
   flagUpdateProduct: boolean = false;
+  spinner: boolean = false;
 
 
   deleteProduct = function (id: number) {
-    if (confirm(`YOU'LL DELETE PRODUCT ID: ${id} 
-               ARE YOU SURE?`)) {
+    if (confirm(`STAI PER CANCELLARE IL PRODOTTO CON ID: ${id} 
+               SEI SICURO`)) {
       this.productService
-        .delete(id).subscribe();
+        .delete(id).subscribe(
+          val => {
+            alert(`Prodotto eliminato correttamente`);
+          },
+
+          error => {
+            alert('OPS... Si è verificato un errore durante la cancellazione');
+          },
+
+          () => {
+            console.log('Cancellazione completata');
+            this.fetchData();
+          }
+        );
     }
-    this.fetchData();
+
   };
 
   getProduct = function (id: number) {
-    // this.btnAdd = false;
     this.productService
       .getById(id).subscribe((dataDetails: Product) => {
         this.productDetails = dataDetails;
@@ -52,10 +65,10 @@ export class HomeComponent implements OnInit {
   }
 
   fetchData = function () {
-    //this.btnAdd = true;
     this.productService
       .get().subscribe((data: Product) => {
         this.products = data;
+        this.spinner = true;
       })
 
 
