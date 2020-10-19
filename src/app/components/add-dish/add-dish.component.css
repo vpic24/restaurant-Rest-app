@@ -20,10 +20,10 @@ input.ng-pristine,textarea.ng-pristine, select.ng-pristine  {
       align-items: center;
 }
 
-#confirm{
-    margin-right: 5px;
-}
-
 #back{
     margin-left: 5px;
+}
+
+#desc{
+    margin-bottom: 10px;
 }

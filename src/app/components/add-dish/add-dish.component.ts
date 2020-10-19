@@ -24,7 +24,7 @@ export class AddDishComponent implements OnInit {
     price: new FormControl('', [Validators.required, Validators.pattern('[0.0-9.9]+')]),
   });
 
-  onSubmit = function () {
+  submitBtn = function () {
     const name = this.productForm.get('name').value;
     const desc = this.productForm.get('desc').value;
     const type = this.productForm.get('type').value;
@@ -38,6 +38,7 @@ export class AddDishComponent implements OnInit {
     window.location.reload();
   }
 
+    //create e new product
   create(product: Product) {
     this.productService.create(product).subscribe(
 
@@ -64,8 +65,8 @@ export class AddDishComponent implements OnInit {
       price: product.price
     });
   }
-
-  updateDone = function (product: Product) {
+    //update a product
+  updateBtn = function (product: Product) {
     if (confirm(`STAI PER AGGIORNARE IL PRODOTTO CON ID:${product.id} 
                SEI SICURO?`)) {
       this.productService

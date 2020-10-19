@@ -9,18 +9,11 @@
 <div class="container p-5">
 
   <form [formGroup]="productForm">
-    <div class="form-row">
-      <div class="col-md-5 mb-3">
+    <div class="form-row mt-2">
+      <div class="col-md-3 mb-3 form-group">
         <label for="validationDefault01">*Nome Piatto</label>
         <input type="text" formControlName="name" class="form-control" placeholder="Nome">
       </div>
-
-      <div class="col-md-6 mb-9">
-        <label for="validationDefault02">*Descrizione Piatto</label>
-        <textarea type="text" formControlName="desc" class="form-control" placeholder="Descrizione" rows="4"></textarea>
-      </div>
-
-
 
       <div class="col-md-3 mb-3">
         <label for="validationDefault04">*Tipologia Del Piatto</label>
@@ -38,16 +31,22 @@
         <input formControlName="price" class="form-control" id="price" placeholder="1.00€">
       </div>
 
+      <div class="col-md-6 mb-9">
+        <label for="validationDefault02">*Descrizione Piatto</label>
+        <textarea id="desc" type="text" formControlName="desc" class="form-control" 
+        placeholder="Descrizione" rows="5" cols="200"></textarea>
+      </div>
+
     </div>
 
     <a>
-      <button id="confirm" class="btn btn-primary" type="submit" *ngIf="flagBtn === false" (click)="onSubmit()"
+      <button id="confirm" class="btn btn-primary" type="submit" *ngIf="flagBtn === false" (click)="submitBtn()"
         [disabled]="!productForm.valid">Salva
       </button>
     </a>
     <a>
       <button id="condifrm" class="btn btn-warning" type="submit" *ngIf="flagBtn === true"
-        (click)="updateDone(productDetails)" [disabled]="!productForm.valid">
+        (click)="updateBtn(productDetails)" [disabled]="!productForm.valid">
         Modifica
       </button>
     </a>

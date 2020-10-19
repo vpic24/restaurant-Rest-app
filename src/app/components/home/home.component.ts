@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
   flagUpdateProduct: boolean = false;
   spinner: boolean = false;
 
-
+    //delete a product
   deleteProduct = function (id: number) {
     if (confirm(`STAI PER CANCELLARE IL PRODOTTO CON ID: ${id} 
                SEI SICURO`)) {
@@ -46,6 +46,7 @@ export class HomeComponent implements OnInit {
 
   };
 
+    //get a product by ID number
   getProduct = function (id: number) {
     this.productService
       .getById(id).subscribe((dataDetails: Product) => {
@@ -64,6 +65,7 @@ export class HomeComponent implements OnInit {
       });
   }
 
+    //get all my products
   fetchData = function () {
     this.productService
       .get().subscribe((data: Product) => {
@@ -76,7 +78,7 @@ export class HomeComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.fetchData();
+    this.fetchData();   //call this func when start the app
   }
 
 }
